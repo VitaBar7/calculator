@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=League+Spartan:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="switch">
+      <h1>calc</h1>
+      <form id="form" action="index.html" method="post">
+        <label for="t1"></label>
+        <input id="t1" class="theme-1" type="radio" name="theme" value="theme-1" checked/>
+        <label for="t2"></label>
+        <input id="t2" class="theme-2" type="radio" name="theme" value="theme-2"/>
+      </form>
+    </div>
+    <div class="calculator">
+      <input type="text" id="input" placeholder="_" readonly="">
+      <div class="btns">
+        <div class="calc-row">
+          <button onclick="add(7)">7</button>
+          <button onclick="add(8)">8</button>
+          <button onclick="add(9)">9</button>
+          <button id="del" onclick="cancel()">DEL</button>
+        </div>
+        <div class="calc-row">
+          <button onclick="add(4)">4</button>
+          <button onclick="add(5)">5</button>
+          <button onclick="add(6)">6</button>
+          <button onclick="add('+')">+</button>
+        </div>
+        <div class="calc-row">
+          <button onclick="add(1)">1</button>
+          <button onclick="add(2)">2</button>
+          <button onclick="add(3)">3</button>
+          <button onclick="add('-')">-</button>
+        </div>
+        <div class="calc-row">
+          <button onclick="add('.')">.</button>
+          <button onclick="add(0)">0</button>
+          <button onclick="add('/')">/</button>
+          <button onclick="add('*')">x</button>
+        </div>
+      </div>
+      <div class="large-btn">
+        <button id="reset" onclick="clr()">RESET</button>
+        <button id="exe" onclick="exe()">=</button>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  
+<script>
+  //theme switch
+const form = document.getElementById('form');
+document.documentElement.className = 'theme-1';
+
+form.addEventListener('change', (event) => {
+  // console.log(event.target.value);
+  document.documentElement.className = event.target.value;
+})
+
+
+  //calulator
+  var val=document.getElementById("input");
+
+  function add(v){
+  val.value+=v;
+  }
+  
+  function clr(){
+  val.value="";
+  }
+  
+  function exe(){
+  val.value=eval(val.value);
+  }
+  
+  function cancel(){
+  val.value=val.value.substr(0,val.value.length-1);
+  }</script>
+</body>
+</html>

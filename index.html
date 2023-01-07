@@ -18,16 +18,25 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <div id="switch">
-      <h1>calc</h1>
-      <form id="form" action="index.html" method="post">
-        <label for="t1"></label>
-        <input id="t1" class="theme-1" type="radio" name="theme" value="theme-1" checked/>
-        <label for="t2"></label>
-        <input id="t2" class="theme-2" type="radio" name="theme" value="theme-2"/>
-      </form>
+    <div id="calc-theme">
+      <h2>calc</h2>
+      <div class="switch">
+        <p>THEME</p>
+        <form id="form" action="index.html" method="post">
+          <div class="theme"> 
+            <label for="t1"></label>
+            <input id="t1" class="theme-1" type="radio" name="theme" value="theme-1" checked/>
+          </div>
+          <div class="theme">
+            <label for="t2"></label>
+            <input id="t2" class="theme-2" type="radio" name="theme" value="theme-2"/>
+          </div>
+        </form>
+      </div>
+    
     </div>
     <div class="calculator">
       <input type="text" id="input" placeholder="_" readonly="">
@@ -64,10 +73,11 @@
     </div>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://github.com/VitaBar7">Vita</a>.
     </div>
   
 <script>
+
   //theme switch
 const form = document.getElementById('form');
 document.documentElement.className = 'theme-1';
@@ -79,7 +89,8 @@ form.addEventListener('change', (event) => {
 
 
   //calulator
-  var val=document.getElementById("input");
+
+  let val = document.getElementById("input");
 
   function add(v){
   val.value+=v;
@@ -95,6 +106,8 @@ form.addEventListener('change', (event) => {
   
   function cancel(){
   val.value=val.value.substr(0,val.value.length-1);
-  }</script>
+  }
+  </script>
+
 </body>
 </html>

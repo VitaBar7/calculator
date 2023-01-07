@@ -59,8 +59,8 @@ form {
     color:var(--light-text);
 } */
 
-#switch {
-    width:350px;
+#calc-theme {
+    width:340px;
     margin:auto;
     display:flex;
     flex-direction: row;
@@ -68,15 +68,33 @@ form {
     justify-content: space-between;
 }
 
+.switch {
+    display:flex;
+    align-items: center;
+}
+
+.switch p {
+    font-size: x-small;
+    margin-right: 3px;
+}
+
+#form {
+    display: flex;
+    font-size: x-small;
+}
+
+.theme {
+    display: flex;
+    flex-direction: column;
+}
+
+
 input [type="radio"] {
+    height: 5px;
     appearance: none;
-    background-color: #fff;
-    margin: 0;
-  
     border-color: var(--bg-color);
     background-color: var(--bg-color);
-    color:var(--bg-color);
-
+    color:var(--bg-color)
 }
 
 input[type="radio"]:focus {
@@ -88,38 +106,44 @@ input[type="radio"]:focus {
 }
 
 input[type="radio"]:checked {
-    color:var(--alert-color);
-    border-width: 0;
-    border-style: none;
+    accent-color: var(--alert-color)
+
+    
 }
     
-.calculator{
+.calculator {
     width:350px;
-    padding:10px;
+    padding:15px 0px;
     border-radius: 10px;
     margin:auto;
     text-align:center;
     background:var(--bg-color);
     border-style: none;
+    padding-bottom: 15px;
     }
-#input{
+    
+#input {
     font-size:40px;
     font-family: 'League Spartan', sans-serif;
     font-weight:500;
     border-radius: 7px;
     color:white;
     text-align:right;
-    width:80%;
+    width:77%;
+    height: 60px;
     background:hsl(224, 36%, 15%);
     border-style: none;
-    }
+    padding-right: 10px;
+}
     
-.btns{
+.btns {
     position:relative;
     width:100%;
-    padding:10px 0px;
-    }
-.btns button{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.btns button {
     border:none;
     outline:none;
     width:60px;
@@ -133,9 +157,12 @@ input[type="radio"]:checked {
     border-bottom-style: outset;
     border-color: var(--key-shadow);
     background:var(--key-color);
-    margin:10px 5px;
+    margin:5px 5px;
     display:inline-block;
-    }
+    padding-top: 8px;
+    
+}
+
 .large-btn button{
     border:none;
     outline:none;
@@ -147,9 +174,10 @@ input[type="radio"]:checked {
     border-bottom-style: outset;
     vertical-align:middle;
     color:var(--text-color);
-    margin:10px 5px;
+    margin: 5px;
     display:inline-block;
-    }
+    padding-top: 8px;
+}
 
 #del, #reset {
     background-color: var(--main-color);

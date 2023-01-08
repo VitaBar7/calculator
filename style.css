@@ -7,28 +7,31 @@ body {
 
 .theme-1 {
     --key-color: hsl(30, 25%, 89%);
+    --alt-key-color:hsl(221, 31%, 44%);
     --main-color: hsl(222, 26%, 31%);
-    --bg-color: hsl(224, 36%, 15%);
+    --bg-color: hsl(223, 31%, 20%);
     --alert-color: hsl(6, 63%, 50%);
     --text-color: hsl(221, 14%, 31%);
     --light-text: hsl(0, 0, 100%);
     --key-shadow: hsl(28, 16%, 65%);
     --alt-key-shadow: hsl(224, 28%, 35%);
     --alert-k-shadow:hsl(6, 70%, 34%);
+    --input-bg-color: hsl(224, 36%, 15%);
  
 }
 
 .theme-2 {
     --key-color: hsl(45, 7%, 89%);
-    --main-color: hsl(185, 42%, 37%);
+    --alt-key-color: hsl(185, 42%, 37%);
+    --main-color: hsl(45, 7%, 89%);
     --bg-color: hsl(0, 5%, 81%);
     --alert-color: hsl(25, 98%, 40%);
     --text-color: hsl(60, 10%, 19%);
-    --light-text: hsl(0, 0, 100%);
-    --key-shadow: hsl(185, 58%, 25%);
+    --light-text: rgb(118, 114, 114);
+    --key-shadow: hsl(180, 2%, 58%);
     --alt-key-shadow: hsl(224, 28%, 35%);
     --alert-k-shadow:hsl(6, 70%, 34%);
-    
+    --input-bg-color:rgb(246, 241, 241);
 }
 
 .theme-3 {
@@ -44,6 +47,7 @@ body {
 .container {
     margin-top: 50px;
     font-family: 'League Spartan', sans-serif;
+    text-align: center;
 }
 
 h1 {
@@ -60,6 +64,7 @@ form {
 } */
 
 #calc-theme {
+    color:var(--light-text);
     width:340px;
     margin:auto;
     display:flex;
@@ -106,15 +111,12 @@ input[type="radio"]:focus {
 }
 
 input[type="radio"]:checked {
-    accent-color: var(--alert-color)
-
-    
+    accent-color: var(--alert-color) 
 }
     
 .calculator {
-    width:350px;
-    padding:15px 0px;
-    border-radius: 10px;
+    width:355px;
+    border-radius: 5px;
     margin:auto;
     text-align:center;
     background:var(--bg-color);
@@ -126,27 +128,28 @@ input[type="radio"]:checked {
     font-size:40px;
     font-family: 'League Spartan', sans-serif;
     font-weight:500;
-    border-radius: 7px;
-    color:white;
+    border-radius: 5px;
+    color:var(--light-text);
     text-align:right;
-    width:77%;
-    height: 60px;
-    background:hsl(224, 36%, 15%);
+    width:332px;
+    margin:auto;
+    height: 70px;
+    background:var(--input-bg-color);
     border-style: none;
-    padding-right: 10px;
+    padding-right: 20px;
 }
     
 .btns {
-    position:relative;
-    width:100%;
     margin-top: 15px;
-    margin-bottom: 10px;
+    width:100%;
+    padding-top: 15px;
+    margin-bottom: 5px;
 }
 
 .btns button {
     border:none;
     outline:none;
-    width:60px;
+    width:18%;
     height:40px;
     font-family: 'League Spartan', sans-serif;
     font-size:1.5rem;
@@ -157,32 +160,31 @@ input[type="radio"]:checked {
     border-bottom-style: outset;
     border-color: var(--key-shadow);
     background:var(--key-color);
-    margin:5px 5px;
     display:inline-block;
-    padding-top: 8px;
-    
+    margin: 5px;
+    padding-top: 7px;
 }
 
 .large-btn button{
     border:none;
     outline:none;
-    width:135px;
+    width:40%;
+    height: 0px;
     font-family: 'League Spartan', sans-serif;
     font-size:1.5rem;
-    color:var(--light-text);
+    color:white;
     border-radius:7px;
     border-bottom-style: outset;
     vertical-align:middle;
-    color:var(--text-color);
-    margin: 5px;
     display:inline-block;
-    padding-top: 8px;
+    padding-top: 5px;
+    margin:5px;
 }
 
 #del, #reset {
-    background-color: var(--main-color);
-    color:var(--light-text);
-    height:35px;
+    background-color: var(--alt-key-color);
+    color:white;
+    height:40px;
     font-size: small;
     border-color: var(--alt-key-shadow);
     border-bottom-style: outset;
@@ -190,8 +192,7 @@ input[type="radio"]:checked {
 
 button#exe {
     background-color: var(--alert-color);
-    color:var(--light-text);
-    height: 35px;
+    height: 40px;
     font-weight: bold;
     align-content: center; 
     border-bottom-style: outset;
@@ -207,3 +208,7 @@ button#exe {
 }
 
 
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 375px) {
+    
+    }
